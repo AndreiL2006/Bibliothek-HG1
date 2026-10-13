@@ -68,4 +68,42 @@ public class Library {
         return resultList;
     }
 
+    public List<Book> getBestBookPair(List<Book> inputBooks, double budget){
+        Book bestBook1 = null;
+        Book bestBook2 = null;
+        double maxPriceFound = -1;
+        int maxPagesFound = -1;
+
+        for(int i = 0; i < inputBooks.size(); i++){
+            Book book1 = inputBooks.get(i);
+            for(int j = i + 1; j < inputBooks.size(); j++){
+                Book book2 = inputBooks.get(j);
+
+                double currentTotalPrice = book1.getPrice() + book2.getPrice();
+                int currentTotalPages = book1.getPages() + book2.getPages();
+                if(currentTotalPrice <= budget){
+                    if(currentTotalPrice > maxPriceFound){
+                        bestBook1 = book1;
+                        bestBook2 = book2;
+                        maxPriceFound = currentTotalPrice;
+                        maxPagesFound = currentTotalPages;
+                    }
+                    else if(currentTotalPrice == maxPriceFound){
+                        if(currentTotalPages > maxPagesFound){
+                            bestBook1 = book1;
+                            bestBook2 = book2;
+                            maxPagesFound = currentTotalPages;
+                        }
+                    }
+                }
+            }
+        }
+        List<Book> result = new ArrayList<>();
+        if(bestBook1 != null && bestBook2 != null){
+            result.add(bestBook1);
+            result.add(bestBook2);
+        }
+        return result;
+    }
+
 }
