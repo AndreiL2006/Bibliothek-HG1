@@ -34,5 +34,16 @@ public class Main{
         List<Book> booksForAvg = Arrays.asList(b1, b2, b3);
         double avg = library.getAveragePageCount(booksForAvg);
         System.out.printf("%.2f\n\n", avg);
+
+        System.out.println("3. Books within a price limit");
+        System.out.println("Maximum price: 30 Euros");
+        System.out.println("Result:");
+        List<Book> budgetBooks = library.getBooksWithinBudget(allBooks, 30.0);
+        for (Book b : budgetBooks) {
+            System.out.println(b.getTitle() + " -> " + (int) b.getPrice() + " Euros");
+        }
+        System.out.println();
+
+
     }
 }
