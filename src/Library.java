@@ -58,4 +58,14 @@ public class Library {
         return mostExpensive;
     }
 
+    public List<Book> getBooksByMinPages(List<Book> inputBooks, int minPages){
+        List<Book> resultList = new ArrayList<>();
+        for(Book b: inputBooks){
+            if(b.getPages() >= minPages){
+                resultList.add(b);
+            }
+        }
+        return resultList;
+    }
+
 }
