@@ -64,5 +64,16 @@ public class Main{
         System.out.println();
 
 
+        System.out.println("6. Two books within a budget");
+        System.out.println("Budget: 55 Euros");
+        System.out.println("Result:");
+        List<Book> bestPair = library.getBestBookPair(allBooks, 55.0);
+        if (bestPair.size() == 2) {
+            Book p1 = bestPair.get(0);
+            Book p2 = bestPair.get(1);
+            int totalPrice = (int) (p1.getPrice() + p2.getPrice());
+            System.out.println(p1.getTitle() + " + " + p2.getTitle());
+            System.out.println("Total price: " + totalPrice + " Euros");
+        }
     }
 }
