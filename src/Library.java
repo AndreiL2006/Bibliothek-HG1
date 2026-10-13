@@ -45,4 +45,17 @@ public class Library {
         return finalList;
     }
 
+    public Book getMostExpensiveBook(List<Book> inputBook){
+        if(inputBook.isEmpty()){
+            return null;
+        }
+        Book mostExpensive = inputBook.get(0);
+        for(Book b: inputBook){
+            if(b.getPrice() > mostExpensive.getPrice()){
+                mostExpensive = b;
+            }
+        }
+        return mostExpensive;
+    }
+
 }
