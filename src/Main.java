@@ -54,6 +54,15 @@ public class Main{
         }
         System.out.println();
 
+        System.out.println("5. Books with a minimum number of pages");
+        System.out.println("Minimum number: 300 pages");
+        System.out.println("Result:");
+        List<Book> longBooks = library.getBooksByMinPages(allBooks, 300);
+        for (Book b : longBooks) {
+            System.out.println(b.getTitle());
+        }
+        System.out.println();
+
 
     }
 }
