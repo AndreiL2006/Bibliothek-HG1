@@ -35,4 +35,14 @@ public class Library {
         return (double) totalPages / inputBooks.size();
     }
 
+    public List<Book> getBooksWithinBudget(List<Book> inputBooks, double maxPrice){
+        List<Book> finalList = new ArrayList<>();
+        for(Book b : inputBooks){
+            if(b.getPrice() <= maxPrice){
+                finalList.add(b);
+            }
+        }
+        return finalList;
+    }
+
 }
