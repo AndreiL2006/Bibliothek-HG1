@@ -22,4 +22,17 @@ public class Library {
         return result;
     }
 
+    public double getAveragePageCount(List<Book> inputBooks){
+        if(inputBooks.isEmpty()){
+            return 0;
+        }
+
+        int totalPages = 0;
+        for(Book book : inputBooks){
+           totalPages += book.getPages();
+        }
+
+        return (double) totalPages / inputBooks.size();
+    }
+
 }
