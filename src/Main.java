@@ -45,5 +45,15 @@ public class Main{
         System.out.println();
 
 
+        System.out.println("4. Most expensive book");
+        System.out.println("Result:");
+        List<Book> booksForExpensive = Arrays.asList(b2, b3, b5); // 1984, Animal Farm, The Hobbit
+        Book mostExpensive = library.getMostExpensiveBook(booksForExpensive);
+        if (mostExpensive != null) {
+            System.out.println(mostExpensive.getTitle() + " (" + (int) mostExpensive.getPrice() + " Euros)");
+        }
+        System.out.println();
+
+
     }
 }
