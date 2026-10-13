@@ -28,5 +28,11 @@ public class Main{
         }
         System.out.println();
 
+
+        System.out.println("2. Average number of pages");
+        System.out.println("Result:");
+        List<Book> booksForAvg = Arrays.asList(b1, b2, b3);
+        double avg = library.getAveragePageCount(booksForAvg);
+        System.out.printf("%.2f\n\n", avg);
     }
 }
